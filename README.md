@@ -2,8 +2,5 @@
 
 Prototype version!
 
-### Found flaws:
->1. Bot is inefficient at getting to the previously found unvisited areas (yellow tiles).
-
-
->2. Bot is bad at minimizing the number of unvisited areas, since it rushes forward and thus creating additional unexplored areas.
+### Flaws of the algorithm:
+>1. Bot is inefficient at getting to the previously found unvisited areas (indicated by yellow tiles). It is unable to optimize the way back to the unvisited areas and simply follows the inverse of the path it took from the first contact with the target tile.
