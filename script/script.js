@@ -241,33 +241,9 @@ function generateRules () {
 
 }
 function removeRedundancies() {
-  var directions, rules;
-  rules = [
-    [/02/g, ''],
-    [/13/g, ''],
-    [/20/g, ''],
-    [/31/g, ''],
-    [/012/g, '1'],
-    [/210/g, '1'],
-    [/123/g, '2'],
-    [/321/g, '2'],
-    [/230/g, '3'],
-    [/032/g, '3'],
-    [/301/g, '0'],
-    [/103/g, '0'],
-  ];
-  for (var i = 0; i < directionsToUnvisited.length; i++) {
-    directions = directionsToUnvisited[i];
-    for (var r = 0; r < rules.length; r++) {
-      var newDir = directions.replace(rules[r][0], rules[r][1]);
-      while (newDir != directions) {
-        directions = newDir;
-        newDir = directions.replace(rules[r][0], rules[r][1]);
-        r = -1;
-      }
-    }
-    directionsToUnvisited[i] = directions;
-  }
+  directionsToUnvisited = directionsToUnvisited.map(function(directions) {
+    return minimize(directions);
+  })
 }
 function deleteEmptyDirection() {
   for (var i = 0; i < directionsToUnvisited.length; i++) {
