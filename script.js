@@ -259,7 +259,12 @@ function removeRedundancies() {
   for (var i = 0; i < directionsToUnvisited.length; i++) {
     directions = directionsToUnvisited[i];
     for (var r = 0; r < rules.length; r++) {
-      directions = directions.replace(rules[r][0], rules[r][1]);
+      var newDir = directions.replace(rules[r][0], rules[r][1]);
+      while (newDir != directions) {
+        directions = newDir;
+        newDir = directions.replace(rules[r][0], rules[r][1]);
+        r = -1;
+      }
     }
     directionsToUnvisited[i] = directions;
   }

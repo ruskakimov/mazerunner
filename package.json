@@ -1,0 +1,26 @@
+{
+  "name": "mazerunner",
+  "version": "1.0.0",
+  "description": "Prototype version! [Demo link](https://cdn.rawgit.com/ruskakimov/mazerunner/master/index.html)",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruskakimov/mazerunner.git"
+  },
+  "author": "Rustem Kakimov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruskakimov/mazerunner/issues"
+  },
+  "homepage": "https://github.com/ruskakimov/mazerunner#readme",
+  "devDependencies": {
+    "chai": "^4.0.0"
+  },
+  "dependencies": {}
+}
