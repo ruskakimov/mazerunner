@@ -1,5 +1,5 @@
 var assert = require('chai').assert
-var minimize = require('../minimize')
+var minimize = require('../script/minimize')
 
 describe('minimize', function() {
     it('returns empty string if passed an empty string', function() {
