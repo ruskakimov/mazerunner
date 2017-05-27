@@ -6,6 +6,7 @@ var currentTool = "Wall";
 var step = 100;
 var timer;
 var directionsToUnvisited = [];
+var opposite = [2, 3, 0, 1];
 
 var row, string;
 for (var r = 1; r <= 30; r++) {
@@ -227,27 +228,17 @@ function getDirection() {
 }
 
 function updateDirections(wentTo) {
-  switch (wentTo) {
-    case 0:
-      pushToAllDirections('2');
-      break;
-    case 1:
-      pushToAllDirections('3');
-      break;
-    case 2:
-      pushToAllDirections('0');
-      break;
-    case 3:
-      pushToAllDirections('1');
-      break;
-  }
+  pushToAllDirections('' + opposite[wentTo]);
   removeRedundancies();
   deleteEmptyDirection();
 }
 function pushToAllDirections(step) {
-  for (var i = 0; i < directionsToUnvisited.length; i++) {
-    directionsToUnvisited[i] += step;
-  }
+  directionsToUnvisited = directionsToUnvisited.map(function (dir) {
+    return dir + step;
+  })
+}
+function generateRules () {
+
 }
 function removeRedundancies() {
   var directions, rules;
